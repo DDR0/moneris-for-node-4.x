@@ -57,6 +57,10 @@ module.exports = function send (credentials, req, extended) {
     filePrefix += 'MPI_'
   }
 
+  if (credentials.debug_xml) {
+    console.log(xmlBuilder.buildObject(data));
+  }
+
   const options = {
     uri: globals.PROTOCOL + '://' + globals[hostPrefix + 'HOST'] + ':' + globals.PORT + globals[filePrefix + 'FILE'],
     method: 'POST',
