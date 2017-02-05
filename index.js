@@ -14,8 +14,8 @@ const xmlBuilder = new xml.Builder()
 xmlBuilder.options.rootName = 'request'
 
 module.exports = function send (credentials, req, extended) {
-  if(extended === undefined) {
-    extended = null;
+  if (extended === undefined) {
+    extended = null
   }
   if (!credentials || !req || !req.type || !credentials.store_id || !credentials.api_token) {
     return Promise.reject(new TypeError('Requires country_code, store_id, api_token'))
@@ -58,7 +58,7 @@ module.exports = function send (credentials, req, extended) {
   }
 
   if (credentials.debug_xml) {
-    console.log(xmlBuilder.buildObject(data));
+    console.log(xmlBuilder.buildObject(data))
   }
 
   const options = {
