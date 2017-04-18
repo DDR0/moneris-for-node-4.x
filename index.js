@@ -57,10 +57,6 @@ module.exports = function send (credentials, req, extended) {
     filePrefix += 'MPI_'
   }
 
-  if (credentials.debug_xml) {
-    console.log(xmlBuilder.buildObject(data))
-  }
-
   const options = {
     uri: globals.PROTOCOL + '://' + globals[hostPrefix + 'HOST'] + ':' + globals.PORT + globals[filePrefix + 'FILE'],
     method: 'POST',
@@ -69,6 +65,11 @@ module.exports = function send (credentials, req, extended) {
       'User-Agent': globals.API_VERSION
     },
     timeout: globals.CLIENT_TIMEOUT * 1000
+  }
+  
+  if (credentials.debug_xml) {
+    const logger = credentials.logger || console.info.bind(console)
+    logger('moneris payload', options)
   }
 
   return request(options)
