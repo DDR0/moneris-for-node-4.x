@@ -1,6 +1,6 @@
 {
   "name": "moneris",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wrapper for Moneris API.",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shaynair/moneris-js.git"
+    "url": "git+https://github.com/DDR0/moneris-js.git"
   },
   "keywords": [
     "moneris",
